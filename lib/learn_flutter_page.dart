@@ -11,7 +11,7 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
   bool isSwitch = false;
   bool? isCheckbox = false;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext cozz1ntext) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Learn Flutter'),
@@ -20,14 +20,22 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
         ),
+        actions: [
+          IconButton(
+            onPressed: (() {
+              debugPrint('Actions');
+            }),
+            icon: const Icon(Icons.info_outline),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Image.asset('images/einstein.jpg'),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             const Divider(
               color: Colors.black,
             ),
